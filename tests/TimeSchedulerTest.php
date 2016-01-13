@@ -5,7 +5,7 @@ use TimeScheduler\Classes\TimeScheduler;
 class TimeSchedulerTest extends PHPUnit_Framework_TestCase
 {
 
-    private $slots = [];
+    private $slots;
 
     /**
      * Sets up the fixture, for example, open a network connection.
