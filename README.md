@@ -7,7 +7,7 @@ Class allows you to set weekdays and time stamps and pick next available for sch
 Just run composer:
 
 ```
-composer require lezhnev/instagram2vk
+composer require lezhnev/time-scheduler
 ```
 
 ## Example
@@ -47,4 +47,4 @@ date("H:i",$time2); // will be "12:40"
 
 ## Support
 
-Please feel free to add PR or email me at meekman74@gmail.com
+Please feel free to add PR or email me at lezhnev.work@gmail.com
