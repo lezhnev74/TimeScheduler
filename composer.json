@@ -1,5 +1,5 @@
 {
-  "name": "lezhnev/timeScheduler",
+  "name": "lezhnev/time-scheduler",
   "type": "library",
   "description": "Time scheduler is a class to schedule timeslots by given time table",
   "keywords": [
