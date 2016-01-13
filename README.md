@@ -1,4 +1,6 @@
 # TimeScheduler
+[![Travis](https://travis-ci.org/lezhnev74/TimeScheduler.svg?branch=master)]()
+
 
 Class allows you to set weekdays and time stamps and pick next available for scheduling purposes.
 
