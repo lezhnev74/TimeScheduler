@@ -1,10 +1,11 @@
 {
-  "name": "lezhnev/instagram2vk",
+  "name": "lezhnev/timeScheduler",
   "type": "library",
   "description": "Time scheduler is a class to schedule timeslots by given time table",
   "keywords": [
     "time",
-    "schedule"
+    "schedule",
+    "timetable"
   ],
   "license": "MIT",
   "authors": [

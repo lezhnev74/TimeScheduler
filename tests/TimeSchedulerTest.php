@@ -48,6 +48,32 @@ class TimeSchedulerTest extends PHPUnit_Framework_TestCase
 
     }
 
+    function test_scheduler_gives_correct_timeslots() {
+        $scheduler = new TimeScheduler();
+
+        //if required set the last slot, so next one will be calculated from this time point
+        $now = strtotime("next Monday 12:00");
+        $scheduler->setLastTimeslot($now);
+
+        $scheduler->setScheduleTimeSlots(
+            [
+                "Mon" => ["12:30", "12:40"],
+                "Tue" => [],
+                "Wed" => [],
+                "Thu" => ["21:30"],
+                "Fri" => [],
+                "Sat" => [],
+                "Sun" => [],
+            ]
+        );
+
+        $time1 = $scheduler->getNextTimeSlot();
+        $time2 = $scheduler->getNextTimeSlot();
+
+        $this->assertEquals(date("H:i",$time1), "12:30");
+        $this->assertEquals(date("H:i",$time2), "12:40");
+    }
+
     /**
      * Test that next timeslot is generated correctly
      */
