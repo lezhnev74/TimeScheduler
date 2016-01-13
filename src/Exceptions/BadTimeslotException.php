@@ -1,5 +1,5 @@
 <?php
-namespace Instagram2Vk\Exceptions;
+namespace TimeScheduler\Exceptions;
 
 use Exception;
 
@@ -7,7 +7,7 @@ use Exception;
  * Class BadTimeslotException
  * Thrown when timeslot has bad(uninterpretable) format
  *
- * @package Instagram2Vk\Exceptions
+ * @package TimeScheduler\Exceptions
  */
 class BadTimeslotException extends Exception
 {

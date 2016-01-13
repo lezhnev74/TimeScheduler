@@ -1,5 +1,5 @@
 <?php
-namespace Instagram2Vk\Exceptions;
+namespace TimeScheduler\Exceptions;
 
 use Exception;
 
@@ -7,7 +7,7 @@ use Exception;
  * Class NoTimeslotsException
  * Thrown when no timeslots given for next scheduling
  *
- * @package Instagram2Vk\Exceptions
+ * @package TimeScheduler\Exceptions
  */
 class NoTimeslotsException extends Exception
 {

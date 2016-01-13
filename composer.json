@@ -1,31 +1,27 @@
 {
   "name": "lezhnev/instagram2vk",
   "type": "library",
-  "description": "Instagram2VK.com Reposter is a library to post instagram pictures to VK.com community's wall",
+  "description": "Time scheduler is a class to schedule timeslots by given time table",
   "keywords": [
-    "instagram",
-    "vk.com",
-    "reposrting",
+    "time",
     "schedule"
   ],
   "license": "MIT",
   "authors": [
     {
       "name": "Dmitriy Lezhnev",
-      "email": "meekman74@gmail.com",
+      "email": "lezhnev.work@gmail.com",
       "homepage": "http://dimalezhnev.ru"
     }
   ],
   "require": {
-    "guzzlehttp/guzzle": "^6.1",
-    "lezhnev74/simple-downloader": "^1.0"
   },
   "require-dev": {
     "phpunit/phpunit": "5.1.*"
   },
   "autoload": {
     "psr-4": {
-      "Instagram2Vk\\": "src/"
+      "TimeScheduler\\": "src/"
     }
   }
 }

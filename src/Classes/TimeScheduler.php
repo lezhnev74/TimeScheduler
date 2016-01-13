@@ -1,11 +1,11 @@
 <?php
-namespace Instagram2Vk\Classes;
+namespace TimeScheduler\Classes;
 
-use Instagram2Vk\Exceptions\BadTimeslotException;
-use Instagram2Vk\Interfaces\VkPostTimeScheduleInterface;
-use Instagram2Vk\Exceptions\NoTimeslotsException;
+use TimeScheduler\Exceptions\BadTimeslotException;
+use TimeScheduler\Interfaces\TimeScheduleInterface;
+use TimeScheduler\Exceptions\NoTimeslotsException;
 
-class VkPostTimeScheduler implements VkPostTimeScheduleInterface
+class TimeScheduler implements TimeScheduleInterface
 {
 
     private $timeslots = [];

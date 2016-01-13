@@ -1,4 +1,4 @@
 <?php
-namespace Instagram2Vk\Test {
+namespace TimeScheduler\Test {
     require __DIR__ . '/../vendor/autoload.php';
 }

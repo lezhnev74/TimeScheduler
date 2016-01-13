@@ -1,8 +1,8 @@
 <?php
 
-use Instagram2Vk\Classes\VkPostTimeScheduler;
+use TimeScheduler\Classes\TimeScheduler;
 
-class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
+class TimeSchedulerTest extends PHPUnit_Framework_TestCase
 {
 
     private $slots = [];
@@ -40,11 +40,11 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
         $next_today = "13:00";
         $this->slots[date("D", $now)][] = $next_today;
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
-        $vkPostTimeScheduler->setLastTimeslot($now);
-        $vkPostTimeScheduler->setScheduleTimeSlots($this->slots);
+        $TimeScheduler = new TimeScheduler();
+        $TimeScheduler->setLastTimeslot($now);
+        $TimeScheduler->setScheduleTimeSlots($this->slots);
 
-        $this->assertEquals(strtotime($next_today, $now), $vkPostTimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime($next_today, $now), $TimeScheduler->getNextTimeSlot());
 
     }
 
@@ -71,16 +71,16 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
         $this->slots[date("D", $now_plus_4d)] = ["23:59"];
         $this->slots[date("D", $now_plus_6d)] = ["0:00"];
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
-        $vkPostTimeScheduler->setLastTimeslot($now);
-        $vkPostTimeScheduler->setScheduleTimeSlots($this->slots);
+        $TimeScheduler = new TimeScheduler();
+        $TimeScheduler->setLastTimeslot($now);
+        $TimeScheduler->setScheduleTimeSlots($this->slots);
 
-        $this->assertEquals(strtotime("13:00", $now_plus_1d), $vkPostTimeScheduler->getNextTimeSlot());
-        $this->assertEquals(strtotime("19:22", $now_plus_1d), $vkPostTimeScheduler->getNextTimeSlot());
-        $this->assertEquals(strtotime("00:10", $now_plus_2d), $vkPostTimeScheduler->getNextTimeSlot());
-        $this->assertEquals(strtotime("23:59", $now_plus_4d), $vkPostTimeScheduler->getNextTimeSlot());
-        $this->assertEquals(strtotime("0:00", $now_plus_6d), $vkPostTimeScheduler->getNextTimeSlot());
-        $this->assertEquals(strtotime("12:00", $now_plus_7d), $vkPostTimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("13:00", $now_plus_1d), $TimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("19:22", $now_plus_1d), $TimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("00:10", $now_plus_2d), $TimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("23:59", $now_plus_4d), $TimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("0:00", $now_plus_6d), $TimeScheduler->getNextTimeSlot());
+        $this->assertEquals(strtotime("12:00", $now_plus_7d), $TimeScheduler->getNextTimeSlot());
 
     }
 
@@ -90,11 +90,11 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
     function test_scheduler_no_timeslots_exception()
     {
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
+        $TimeScheduler = new TimeScheduler();
 
-        $this->setExpectedException('Instagram2Vk\Exceptions\NoTimeslotsException');
+        $this->setExpectedException('TimeScheduler\Exceptions\NoTimeslotsException');
 
-        $vkPostTimeScheduler->setScheduleTimeSlots($this->slots);
+        $TimeScheduler->setScheduleTimeSlots($this->slots);
 
     }
 
@@ -106,11 +106,11 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
     function test_scheduler_wrong_weekday_exception()
     {
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
+        $TimeScheduler = new TimeScheduler();
 
-        $this->setExpectedException('Instagram2Vk\Exceptions\BadTimeslotException');
+        $this->setExpectedException('TimeScheduler\Exceptions\BadTimeslotException');
 
-        $vkPostTimeScheduler->setScheduleTimeSlots([
+        $TimeScheduler->setScheduleTimeSlots([
             "Mon" => [], //okay
             "fri" => []// wrong
         ]);
@@ -124,11 +124,11 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
     function test_scheduler_timeslots_exception()
     {
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
+        $TimeScheduler = new TimeScheduler();
 
-        $this->setExpectedException('Instagram2Vk\Exceptions\BadTimeslotException');
+        $this->setExpectedException('TimeScheduler\Exceptions\BadTimeslotException');
 
-        $vkPostTimeScheduler->setScheduleTimeSlots([
+        $TimeScheduler->setScheduleTimeSlots([
             "Mon" => [], //okay
             "Fri" => ""// wrong
         ]);
@@ -143,11 +143,11 @@ class VkPostTimeSchedulerTest extends PHPUnit_Framework_TestCase
     function test_scheduler_timeslots_wrong_time_exception()
     {
 
-        $vkPostTimeScheduler = new VkPostTimeScheduler();
+        $TimeScheduler = new TimeScheduler();
 
-        $this->setExpectedException('Instagram2Vk\Exceptions\BadTimeslotException');
+        $this->setExpectedException('TimeScheduler\Exceptions\BadTimeslotException');
 
-        $vkPostTimeScheduler->setScheduleTimeSlots([
+        $TimeScheduler->setScheduleTimeSlots([
             "Mon" => [], //okay
             "Fri" => ["25:12"] // wrong
         ]);

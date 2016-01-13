@@ -1,13 +1,13 @@
 <?php
-namespace Instagram2Vk\Interfaces;
+namespace TimeScheduler\Interfaces;
 
 /**
- * Class VkPostTimeScheduleInterface
- * Interface for classes who can calculate timeslots for future posts
+ * Class TimeScheduleInterface
+ * Interface for classes who can calculate timeslots
  *
- * @package Instagram2Vk\Interfaces
+ * @package TimeScheduler\Interfaces
  */
-interface VkPostTimeScheduleInterface {
+interface TimeScheduleInterface {
 
     /**
      * Set configuration data of time slots

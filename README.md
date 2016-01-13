@@ -1,8 +1,6 @@
-# instagram2vk
+# TimeScheduler
 
-[![License](https://poser.pugx.org/lezhnev/instagram2vk/license)](https://packagist.org/packages/lezhnev/instagram2vk)
-[![Latest Stable Version](https://poser.pugx.org/lezhnev/instagram2vk/v/stable)](https://packagist.org/packages/lezhnev/instagram2vk)
-
+[![License](https://poser.pugx.org/lezhnev/TimeScheduler/license)](https://packagist.org/packages/lezhnev/instagram2vk)
 
 Instagram reposter to vk.com does exatly this - schedules reposting of instagram photos to VK.com (on community's wall):
 
