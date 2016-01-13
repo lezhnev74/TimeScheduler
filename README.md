@@ -2,7 +2,6 @@
 [![Travis](https://travis-ci.org/lezhnev74/TimeScheduler.svg?branch=master)]()
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lezhnev74/TimeScheduler/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lezhnev74/TimeScheduler/?branch=master)
 [![Packagist](https://img.shields.io/packagist/l/lezhnev/time-scheduler.svg)]()
-[![Packagist](https://img.shields.io/packagist/v/lezhnev/time-scheduler.svg)]()
 
 Class allows you to set weekdays and time stamps and pick next available for scheduling purposes.
 
